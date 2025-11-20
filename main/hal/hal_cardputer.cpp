@@ -102,6 +102,8 @@ void HalCardputer::_bat_init()
     adc_read_init();
 }
 
+void HalCardputer::_sdcard_init() { _sdcard = new SDCard; }
+
 
 void HalCardputer::init()
 {
@@ -113,6 +115,7 @@ void HalCardputer::init()
     _mic_init();
     _button_init();
     _bat_init();
+    _sdcard_init();
 }
 
 

@@ -13,8 +13,8 @@
  * ESP8266Audio: https://github.com/earlephilhower/ESP8266Audio/
  */
 
-#define WIFI_SSID "IOTNetwork"
-#define WIFI_PASS "fwintheshell"
+#define WIFI_SSID "MafiA"
+#define WIFI_PASS "43101vassora!"
 
 #include "app_radio.h"
 #include "spdlog/spdlog.h"
@@ -38,29 +38,35 @@
 #define AAC_URL_INDEXS (i == 2)
 #define CN_FONT_URL_INDEXS (i == 0 || i == 7 || i == 8 || i == 9)
 static constexpr const char* station_list[][2] = {
-    {"北京文艺广播 FM87.6" , "http://lhttp.qtfm.cn/live/333/64k.mp3"},
-    {"shadowfr69 Radio mp3-256k"  , "https://radio.shadowfr69.eu/mp3"},
-    {"shadowfr69 Radio aac-192k", "https://radio.shadowfr69.eu/aac"},
-    {"Lite Favorites"    , "http://naxos.cdnstream.com:80/1255_128"},
-    {"MundoLivre FM"     , "http://rrdns-continental.webnow.com.br/mundolivre.mp3"},
-    {"Tsubaki Web Radio" , "http://stream.tsubakianimeradio.com:9000/stream/1/"},
-    {"Japanimradio - Osaka", "http://ais-edge104-live365-dal02.cdnstream.com/a53497"},
-    {"959年代音乐怀旧好声音", "http://lhttp.qtfm.cn/live/5021381/64k.mp3"},
-    {"动听音乐台",           "http://lhttp.qtfm.cn/live/5022107/64k.mp3"},
-    {"星河音乐",            "http://lhttp.qtfm.cn/live/20210755/64k.mp3"},
-    // {"thejazzstream"     , "http://wbgo.streamguys.net/thejazzstream"},
-    {"u80s"              , "http://ice6.somafm.com/u80s-128-mp3"},
-    {"Awesome80s"        , "http://listen.livestreamingservice.com/181-awesome80s_128k.mp3"},
-    {"Metal Detector"    , "http://ice4.somafm.com/metal-128-mp3"},
-    {"181-beatles_128k"  , "http://listen.181fm.com/181-beatles_128k.mp3"},
-    {"Rock hairband"     , "http://listen.livestreamingservice.com/181-hairband_128k.mp3"},
-    {"Dub Step Beyond"   , "http://ice1.somafm.com/dubstep-256-mp3"},
-    {"illstreet-128-mp3" , "http://ice1.somafm.com/illstreet-128-mp3"},
-    {"bootliquor-128-mp3", "http://ice1.somafm.com/bootliquor-128-mp3"},
-    {"dronezone-128-mp3" , "http://ice1.somafm.com/dronezone-128-mp3"},
-    {"Classic FM"        , "http://media-ice.musicradio.com:80/ClassicFMMP3"},
-    //{"Morcegao FM"       , "http://tunein.com/radio/Morcego-FM-s112812/"},
-    //{"Morcegao FM"       , "http://radio.morcegaofm.com.br/morcegao32/"},
+    {"Beatles"  , "http://listen.181fm.com/181-beatles_128k.mp3"}, // Good!
+    {"Soothing ambient sounds" , "http://ice1.somafm.com/dronezone-128-mp3"}, // Good!
+    {"Awesome80s"        , "http://listen.livestreamingservice.com/181-awesome80s_128k.mp3"}, // Good!
+    {"Rock hairband"     , "http://listen.livestreamingservice.com/181-hairband_128k.mp3"}, // Good!
+    {"Classic FM"        , "http://media-ice.musicradio.com:80/ClassicFMMP3"}, // Good!
+    {"GalaxyMusic",            "http://lhttp.qtfm.cn/live/20210755/64k.mp3"}, // Good!
+    {"u80s"              , "http://ice6.somafm.com/u80s-128-mp3"}, // Good!
+    {"illstreet-128-mp3" , "http://ice1.somafm.com/illstreet-128-mp3"}, // Good signal! Music okay? idk
+    {"USA Country Bootliquor", "http://ice1.somafm.com/bootliquor-128-mp3"}, // Good signal! Music okay? idk
+    {"Lite Favorites"    , "http://naxos.cdnstream.com:80/1255_128"}, // Good!
+
+    // {"Metal Detector"    , "http://ice4.somafm.com/metal-128-mp3"}, // BAD MUSIC
+
+
+    // {"shadowfr69 Radio mp3-256k"  , "https://radio.shadowfr69.eu/mp3"}, // Bad Signal
+    // {"Japanese Radio", "https://radio.shadowfr69.eu/aac"}, // Bad Signal - Japanese
+    // {"Dub Step Beyond"   , "http://ice1.somafm.com/dubstep-256-mp3"}, // Bad signal
+    // {"Melodious Radio",           "http://lhttp.qtfm.cn/live/5022107/64k.mp3"}, // Bad signal
+    // {"959 Nostalgic Classics", "http://lhttp.qtfm.cn/live/5021381/64k.mp3"}, // Bad signal
+
+    // {"Beijing Arts Radio FM87.6" , "http://lhttp.qtfm.cn/live/333/64k.mp3"}, // Chinese
+
+
+    // {"MundoLivre FM"     , "http://rrdns-continental.webnow.com.br/mundolivre.mp3"}, // No signal
+    // {"Tsubaki Web Radio" , "http://stream.tsubakianimeradio.com:9000/stream/1/"}, // No Signal
+    // {"Japanimradio - Osaka", "http://ais-edge104-live365-dal02.cdnstream.com/a53497"}, // No Signal
+    // {"Morcegao FM"       , "http://tunein.com/radio/Morcego-FM-s112812/"}, // No Signal
+    // {"Morcegao FM2"       , "http://radio.morcegaofm.com.br/morcegao32/"}, // No Signal
+    // {"thejazzstream"     , "http://wbgo.streamguys.net/thejazzstream"}, // No Signal
 };
 static constexpr const size_t stations = sizeof(station_list) / sizeof(station_list[0]);
 
