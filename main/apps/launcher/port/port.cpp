@@ -25,24 +25,19 @@ void Launcher::_port_wait_enter()
 {
     // delay(600);
 
-    _data.hal->Speaker()->setVolume(64);
+    _data.hal->Speaker()->setVolume(255);
     // bool stuff = false;
 
     _data.hal->keyboard()->updateKeyList();
     if (_data.hal->keyboard()->keyList().size())
     {
-        // silence mode
-        auto cfg = _data.hal->Speaker()->config();
-        cfg.magnification = 1;
-        _data.hal->Speaker()->config(cfg);
         // _data.hal->Speaker()->playWav(boot_sound_1, sizeof(boot_sound_1));
     }
     else
     {
         // stuff = true;
         #ifndef NO_BOOT_PLAY_STUFF
-        _data.hal->Speaker()->playWav(boot_sound_1, sizeof(boot_sound_1));
-        // _data.hal->Speaker()->playWav(boot_sound_2, sizeof(boot_sound_2));
+        _data.hal->Speaker()->playWav(boot_sound_2, sizeof(boot_sound_2));
         #endif
     }
 
